@@ -10,6 +10,10 @@
 
 ### To run the App:
 
-- You need to clone this [GitHub](https://github.com/Praddby/nodejs/tree/task-1/ciphering-cli-tool).
-- Open _`Git Bash`_ in directory of App (where you created clone).
-- Then enter _`node index -c "C1-C1-R0-A" -i "./input.txt" -o "./output.txt"`_ at the command line and other examples from the task.
+1. You need to clone this [GitHub](https://github.com/Praddby/nodejs/tree/task-1/ciphering-cli-tool).
+2. Open _`Git Bash`_ in directory of App (where you created clone).
+3. Then enter follow at the command line and other examples from the task:
+   - _`node index -c "C1-C1-R0-A" -i "./input.txt" -o "./output.txt"`_;
+   - _`node index -c "C1-C0-A-R1-R0-A-R0-R0-C1-A" -i "./input.txt" -o "./output.txt"`_;
+   - _`node index -c "A-A-A-R1-R0-R0-R0-C1-C1-A" -i "./input.txt" -o "./output.txt"`_;
+   - _`node index -c "C1-R1-C0-C0-A-R0-R1-R1-A-C1" -i "./input.txt" -o "./output.txt"`_.
