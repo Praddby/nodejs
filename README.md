@@ -23,9 +23,11 @@
 
 ### To run the App:
 
-1. You need to clone this [GitHub](https://github.com/Praddby/nodejs/tree/task-1/ciphering-cli-tool).
-2. Open _`Git Bash`_ in directory of App (where you created clone).
-3. Then enter follow at the command line and other examples from the task:
+1. Open _`Git Bash`_ in directory of App (where do you want to clone the App).
+2. Then enter _`git clone git@github.com:Praddby/nodejs.git`_ or _`https://github.com/Praddby/nodejs.git`_ or Download ZIP from [GitHab](https://github.com/Praddby/nodejs).
+3. Then enter _`cd nodejs`_ (to enter the App folder).
+4. Then enter _`git checkout task-1/ciphering-cli-tool`_ (to select the branch with the App).
+5. Then enter follow at the command line and other examples from the task:
    - _`node index -c "C1-C1-R0-A" -i "./input.txt" -o "./output.txt"`_;
    - _`node index -c "C1-C0-A-R1-R0-A-R0-R0-C1-A" -i "./input.txt" -o "./output.txt"`_;
    - _`node index -c "A-A-A-R1-R0-R0-R0-C1-C1-A" -i "./input.txt" -o "./output.txt"`_;
