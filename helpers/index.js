@@ -3,6 +3,7 @@ const entryArgv = require("./entryArgv");
 const nameOption = require("./nameOption");
 const isDir = require("./isDir");
 const parserConfig = require("./parserConfig");
+const handlerError = require("./handlerError");
 
 module.exports = {
   isDuplicateOption,
@@ -10,4 +11,5 @@ module.exports = {
   nameOption,
   isDir,
   parserConfig,
+  handlerError,
 } 
