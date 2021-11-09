@@ -6,6 +6,7 @@ const {
   nameOption,
   isDir,
   parserConfig,
+  handlerError,
 } = require("./helpers");
 const { MyReadStream, MyWriteStream } = require("./streams");
 const {
@@ -43,8 +44,7 @@ try {
     throw new BadValidationError(`This config "${config}" is invalid!`);
   }
 } catch (err) {
-  process.stderr.write(`${err}`);
-  process.exit(1);
+  handlerError(err);
 }
 
 const arrTransform = parserConfig(config);
@@ -57,8 +57,7 @@ pipeline(
   write,
   (err) => {
     if (err) {
-      process.stderr.write(`Unknow error: ${err.message}`);
-      process.exit(1);
+      handlerError(err);
     }
   }
 );
