@@ -13,5 +13,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/Praddby/nodejs#readme"
+  "homepage": "https://github.com/Praddby/nodejs#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
 }
