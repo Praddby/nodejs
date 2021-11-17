@@ -19,6 +19,7 @@
   "license": "ISC",
   "homepage": "https://github.com/Praddby/nodejs#readme",
   "devDependencies": {
+    "@types/jest": "^27.0.2",
     "jest": "^27.3.1"
   }
 }
