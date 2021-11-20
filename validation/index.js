@@ -1,5 +1,5 @@
-const validationConfig = require("./validationConfig");
+const validationError = require("./validationError");
 
 module.exports = {
-  validationConfig,
+  validationError,
 };
