@@ -4,7 +4,7 @@ const fs = require("fs");
 describe("Readable stream: testing my read stream", () => {
   const message = "Text for testing work my read stream!";
   let file = "fileForRead.txt";
-  let readStream;
+  const readStream = new MyReadStream(file);
 
   beforeAll(() => {
     fs.open(file, "w", (err) => {
@@ -14,8 +14,6 @@ describe("Readable stream: testing my read stream", () => {
     fs.appendFile(file, message, (err) => {
       if(err) throw err;
     });
-  
-    readStream = new MyReadStream(file);
   });
 
   afterAll(() => {
