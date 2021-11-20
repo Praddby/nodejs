@@ -23,18 +23,10 @@ class MyWriteStream extends Writable {
   _write(chunk, _, callback) {
     fs.write(this._fd, chunk.toString(), (err) => {
       if (err) {
-        this.destroy(err);
+        callback(new NotPermittedError(`Can't write file "${path.basename(this._path)}"!`));
       }
     })
     callback();
-  }
-
-  _destroy(err, callback) {
-    if (this._fd) {
-      fs.close(this._fd, (er) => callback(er || err));
-    } else {
-      callback(new NotPermittedError(`Can't write file "${path.basename(this._path)}"!`));
-    }
   }
 }
 

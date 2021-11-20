@@ -34,7 +34,7 @@ class MyReadStream extends Readable {
     if (this._sizeFile > 0) {
       fs.read(this._fd, buff, 0, readSize, this._start, (err, _) => {
         if (err) {
-          this.destroy(err);
+          callback(new NotPermittedError(`Can't read file "${path.basename(this._path)}"!`));
         }
         this.push(buff.toString());
       });
@@ -42,14 +42,6 @@ class MyReadStream extends Readable {
       this._start = readSize;
     } else {
       fs.close(this._fd);
-    }
-  }
-
-  _destroy(err, callback) {
-    if (this._fd) {
-      fs.close(this._fd, (er) => callback(er || err));
-    } else {
-      callback(new NotPermittedError(`Can't read file "${path.basename(this._path)}"!`));
     }
   }
 }
