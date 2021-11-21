@@ -9,7 +9,7 @@ const isDir = (pathFile) => {
     }
     return false;
   } catch (e) {
-    process.stderr.write(`Not fount file: This file "${path.basename(pathFile)}"" do not exist!`);
+    process.stderr.write(`Not fount file: This file "${path.basename(pathFile)}" do not exist!`);
     process.exit(1);
   }
 }
