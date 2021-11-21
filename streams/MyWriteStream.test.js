@@ -25,10 +25,6 @@ describe("Writable stream: testing my write stream", () => {
     expect(writeStream._write).toBeDefined();
   });
 
-  test("should difined method _destroy", () => {
-    expect(writeStream._destroy).toBeDefined();
-  });
-
   test("should write message to file", () => {
     expect(result).toBeTruthy();
   });
