@@ -1,9 +1,4 @@
-const {
-  isDuplicateOption,
-  isDir,
-  entryArgv,
-  nameOption,
-} = require("../helpers");
+const { isDuplicateOption, isDir } = require("../helpers");
 const {
   NotFoundError,
   DuplicateError,
@@ -12,36 +7,27 @@ const {
 } = require("../errors");
 const validationConfig = require("./validationConfig");
 
-const {
-  configs,
-  inputs,
-  outputs,
-  nameConfig,
-  nameInput,
-  nameOutput,
-} = require("../utils/parserArgv");
-
-const validationError = () => {
-  if (!configs) {
+const validationError = (obj) => {
+  if (!obj.configs) {
     throw new NotFoundError("Missing '-c' or '--config' option!")
-  } else if (!nameConfig) {
+  } else if (!obj.nameConfig) {
     throw new NotFoundError("Missing value for '-c' or '--config' option!");
-  } else if (inputs && !nameInput) {
+  } else if (obj.inputs && !obj.nameInput) {
     throw new NotFoundError("Missing value for '-i' or '--input' option!");
-  } else if (outputs && !nameOutput) {
+  } else if (obj.outputs && !obj.nameOutput) {
     throw new NotFoundError("Missing value for '-o' or '--output' option!");
-  } else if (isDuplicateOption(configs)) {
+  } else if (isDuplicateOption(obj.configs)) {
     throw new DuplicateError("Duplicated config option!");
-  } else if (inputs && isDuplicateOption(inputs)) {
+  } else if (obj.inputs && isDuplicateOption(obj.inputs)) {
     throw new DuplicateError("Duplicated input option!");
-  } else if (outputs && isDuplicateOption(outputs)) {
+  } else if (obj.outputs && isDuplicateOption(obj.outputs)) {
     throw new DuplicateError("Duplicated output option!");
-  } else if (nameInput && isDir(nameInput)) {
-    throw new BadPathError(`${nameInput} is directory, but need file!`);
-  } else if (nameOutput && isDir(nameOutput)) {
-    throw new BadPathError(`${nameOutput} is directory, but need file!`);
-  } else if (!validationConfig(nameConfig)) {
-    throw new BadValidationError(`This config "${nameConfig}" is invalid!`);
+  } else if (obj.nameInput && isDir(obj.nameInput)) {
+    throw new BadPathError(`${obj.nameInput} is directory, but need file!`);
+  } else if (obj.nameOutput && isDir(obj.nameOutput)) {
+    throw new BadPathError(`${obj.nameOutput} is directory, but need file!`);
+  } else if (!validationConfig(obj.nameConfig)) {
+    throw new BadValidationError(`This config "${obj.nameConfig}" is invalid!`);
   }
 };
 
