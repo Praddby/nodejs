@@ -1,8 +1,5 @@
 {
   "name": "task-2",
-  "jest": {
-    "verbose": true
-  },
   "version": "1.0.0",
   "description": "Testing with Jest",
   "main": "index.js",
